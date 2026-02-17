@@ -31,7 +31,7 @@ export default function RoomManagement() {
   const fetchRooms = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get('http://localhost:5000/api/patients');
+      const { data } = await axios.get('https://nextgen-hms-backend.onrender.com/api/patients');
       setRooms(data.rooms || []);
     } catch (error) {
       console.error('Error fetching rooms:', error);
@@ -130,9 +130,9 @@ export default function RoomManagement() {
       };
 
       if (editingRoom) {
-        await axios.put(`http://localhost:5000/api/patients/${editingRoom._id}`, roomData);
+        await axios.put(`https://nextgen-hms-backend.onrender.com/api/patients/${editingRoom._id}`, roomData);
       } else {
-        await axios.post('http://localhost:5000/api/patients', roomData);
+        await axios.post('https://nextgen-hms-backend.onrender.com/api/patients', roomData);
       }
       
       fetchRooms();
@@ -149,7 +149,7 @@ export default function RoomManagement() {
     if (!confirm('Are you sure you want to delete this room?')) return;
     
     try {
-      await axios.delete(`http://localhost:5000/api/patients/${roomId}`);
+      await axios.delete(`https://nextgen-hms-backend.onrender.com/api/patients/${roomId}`);
       fetchRooms();
     } catch (error) {
       console.error('Error deleting room:', error);
@@ -159,7 +159,7 @@ export default function RoomManagement() {
 
   const handleToggleAvailability = async (roomId) => {
     try {
-      await axios.patch(`http://localhost:5000/api/patients/${roomId}/availability`);
+      await axios.patch(`https://nextgen-hms-backend.onrender.com/api/patients/${roomId}/availability`);
       fetchRooms();
     } catch (error) {
       console.error('Error toggling availability:', error);

@@ -113,7 +113,7 @@ export default function ImageUpload({
 
   const handleRemove = async (publicId, index) => {
     try {
-      await axios.delete(`http://localhost:5000/api/upload/${encodeURIComponent(publicId)}`);
+      await axios.delete(`https://nextgen-hms-backend.onrender.com/api/upload/${encodeURIComponent(publicId)}`);
       const newImages = uploadedImages.filter((_, i) => i !== index);
       setUploadedImages(newImages);
       onRemoveImage?.(publicId, index);

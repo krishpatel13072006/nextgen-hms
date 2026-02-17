@@ -14,7 +14,7 @@ export default function RoomAvailabilityCalendar({ rooms = [] }) {
   const fetchBookings = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get('http://localhost:5000/api/appointments');
+      const { data } = await axios.get('https://nextgen-hms-backend.onrender.com/api/appointments');
       setBookings(data.bookings || []);
     } catch (error) {
       console.error('Error fetching bookings:', error);

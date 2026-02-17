@@ -46,7 +46,7 @@ export default function ProfilePage() {
       if (storedUser) {
         // Handle both old format (id) and new format (_id)
         const userId = storedUser._id || storedUser.id;
-        const { data } = await axios.get(`http://localhost:5000/api/appointments/my-bookings?userId=${userId}`);
+        const { data } = await axios.get(`https://nextgen-hms-backend.onrender.com/api/appointments/my-bookings?userId=${userId}`);
         setBookings(data.bookings || []);
       }
     } catch (error) {
@@ -72,7 +72,7 @@ export default function ProfilePage() {
     try {
       const token = localStorage.getItem('token');
       const { data } = await axios.patch(
-        'http://localhost:5000/api/auth/profile',
+        'https://nextgen-hms-backend.onrender.com/api/auth/profile',
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -108,7 +108,7 @@ export default function ProfilePage() {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:5000/api/auth/change-password',
+        'https://nextgen-hms-backend.onrender.com/api/auth/change-password',
         {
           currentPassword: passwordData.currentPassword,
           newPassword: passwordData.newPassword

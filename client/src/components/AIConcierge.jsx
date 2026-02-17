@@ -65,7 +65,7 @@ export default function AIConcierge() {
     setIsLoading(true);
 
     try {
-      const { data } = await axios.post('http://localhost:5000/api/ai/chat', { 
+      const { data } = await axios.post('https://nextgen-hms-backend.onrender.com/api/ai/chat', { 
         message: input 
       });
       setMessages(prev => [...prev, { 

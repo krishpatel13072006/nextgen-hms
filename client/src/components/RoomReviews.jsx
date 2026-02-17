@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Star, User, Clock, ThumbsUp, ThumbsDown, Edit2, Trash2 } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://nextgen-hms-backend.onrender.com/api';
 
 export default function RoomReviews({ roomId, currentUser }) {
   const [reviews, setReviews] = useState([]);

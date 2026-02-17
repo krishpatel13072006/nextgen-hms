@@ -43,7 +43,7 @@ export default function AdminAnalytics() {
   const fetchStats = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get('http://localhost:5000/api/analytics/stats');
+      const { data } = await axios.get('https://nextgen-hms-backend.onrender.com/api/analytics/stats');
       setStats(data.stats);
     } catch (error) {
       console.error('Error fetching analytics:', error);
@@ -54,7 +54,7 @@ export default function AdminAnalytics() {
 
   const fetchBookings = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/appointments');
+      const { data } = await axios.get('https://nextgen-hms-backend.onrender.com/api/appointments');
       setBookings(data.bookings || []);
     } catch (error) {
       console.error('Error fetching bookings:', error);
@@ -114,7 +114,7 @@ export default function AdminAnalytics() {
 
   const updateBookingStatus = async (bookingId, status) => {
     try {
-      await axios.patch(`http://localhost:5000/api/appointments/${bookingId}/status`, { status });
+      await axios.patch(`https://nextgen-hms-backend.onrender.com/api/appointments/${bookingId}/status`, { status });
       fetchStats();
       fetchBookings();
       alert(`Booking status updated to ${status}`);

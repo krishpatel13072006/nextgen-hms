@@ -40,8 +40,8 @@ export default function Dashboard() {
   const fetchData = async () => {
     try {
       const [roomsRes, bookingsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/patients'),
-        axios.get('http://localhost:5000/api/appointments')
+        axios.get('https://nextgen-hms-backend.onrender.com/api/patients'),
+        axios.get('https://nextgen-hms-backend.onrender.com/api/appointments')
       ]);
       setRooms(roomsRes.data.rooms || []);
       setOccupancyRate(roomsRes.data.occupancyRate || 0);
@@ -62,7 +62,7 @@ export default function Dashboard() {
 
   const toggleAvailability = async (roomId) => {
     try {
-      await axios.patch(`http://localhost:5000/api/patients/${roomId}/availability`);
+      await axios.patch(`https://nextgen-hms-backend.onrender.com/api/patients/${roomId}/availability`);
       fetchData();
     } catch (error) {
       console.error('Error toggling availability:', error);
@@ -83,7 +83,7 @@ export default function Dashboard() {
         isAvailable: true
       };
       
-      await axios.post('http://localhost:5000/api/patients', roomData);
+      await axios.post('https://nextgen-hms-backend.onrender.com/api/patients', roomData);
       setShowAddRoom(false);
       setNewRoom({ number: '', type: 'Standard', price: '', capacity: 2, amenities: '', description: '' });
       fetchData();
@@ -98,7 +98,7 @@ export default function Dashboard() {
     if (!window.confirm('Are you sure you want to delete this room?')) return;
     
     try {
-      await axios.delete(`http://localhost:5000/api/patients/${roomId}`);
+      await axios.delete(`https://nextgen-hms-backend.onrender.com/api/patients/${roomId}`);
       fetchData();
       alert('Room deleted successfully!');
     } catch (error) {
@@ -109,7 +109,7 @@ export default function Dashboard() {
 
   const updateBookingStatus = async (bookingId, status) => {
     try {
-      await axios.patch(`http://localhost:5000/api/appointments/${bookingId}/status`, { status });
+      await axios.patch(`https://nextgen-hms-backend.onrender.com/api/appointments/${bookingId}/status`, { status });
       fetchData();
       alert(`Booking status updated to ${status}`);
     } catch (error) {
@@ -122,7 +122,7 @@ export default function Dashboard() {
     if (!window.confirm('Are you sure you want to cancel this booking?')) return;
     
     try {
-      await axios.patch(`http://localhost:5000/api/appointments/${bookingId}/cancel`);
+      await axios.patch(`https://nextgen-hms-backend.onrender.com/api/appointments/${bookingId}/cancel`);
       fetchData();
       alert('Booking cancelled successfully!');
     } catch (error) {

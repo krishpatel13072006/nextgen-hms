@@ -25,7 +25,7 @@ export default function RoomsPage() {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/patients');
+        const { data } = await axios.get('https://nextgen-hms-backend.onrender.com/api/patients');
         setRooms(data.rooms || data);
         setFilteredRooms(data.rooms || data);
       } catch (error) {

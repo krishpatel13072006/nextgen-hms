@@ -51,7 +51,7 @@ export default function RoomDetailPage() {
   useEffect(() => {
     const fetchRoom = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/patients');
+        const { data } = await axios.get('https://nextgen-hms-backend.onrender.com/api/patients');
         const rooms = data.rooms || data;
         const foundRoom = rooms.find(r => r._id === id || r.number?.toString() === id);
         setRoom(foundRoom || null);
@@ -72,7 +72,7 @@ export default function RoomDetailPage() {
     }
     try {
       const user = JSON.parse(localStorage.getItem('user') || '{}');
-      await axios.post('http://localhost:5000/api/booking/book-room', {
+      await axios.post('https://nextgen-hms-backend.onrender.com/api/booking/book-room', {
         roomNumber: room.number,
         customerName: user.name || 'Guest User',
         customerEmail: user.email || 'guest@example.com',

@@ -52,8 +52,8 @@ export default function AdminRequests() {
     setLoading(true);
     try {
       const [requestsRes, statsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/requests/all'),
-        axios.get('http://localhost:5000/api/requests/stats')
+        axios.get('https://nextgen-hms-backend.onrender.com/api/requests/all'),
+        axios.get('https://nextgen-hms-backend.onrender.com/api/requests/stats')
       ]);
       setRequests(requestsRes.data);
       setStats(statsRes.data);
@@ -73,7 +73,7 @@ export default function AdminRequests() {
 
   const updateStatus = async (id, newStatus) => {
     try {
-      await axios.patch(`http://localhost:5000/api/requests/${id}`, { status: newStatus });
+      await axios.patch(`https://nextgen-hms-backend.onrender.com/api/requests/${id}`, { status: newStatus });
       setRequests(requests.map(r => 
         r._id === id ? { ...r, status: newStatus } : r
       ));
@@ -85,7 +85,7 @@ export default function AdminRequests() {
   const bulkUpdate = async (status) => {
     if (selectedRequests.length === 0) return;
     try {
-      await axios.patch('http://localhost:5000/api/requests/bulk/status', {
+      await axios.patch('https://nextgen-hms-backend.onrender.com/api/requests/bulk/status', {
         ids: selectedRequests,
         status
       });

@@ -21,7 +21,7 @@ export default function RoomCard({ room, onBooked }) {
       // Get logged in user info
       const user = JSON.parse(localStorage.getItem('user') || '{}');
       
-      const response = await axios.post('http://localhost:5000/api/booking/book-room', {
+      const response = await axios.post('https://nextgen-hms-backend.onrender.com/api/booking/book-room', {
         roomNumber: room.number,
         customerName: user.name || 'Guest User',
         customerEmail: user.email || 'guest@example.com'

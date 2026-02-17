@@ -115,7 +115,7 @@ export default function ServiceMenu({ roomNumber = '101' }) {
         status: 'Pending'
       };
 
-      await axios.post('http://localhost:5000/api/requests', orderData);
+      await axios.post('https://nextgen-hms-backend.onrender.com/api/requests', orderData);
       
       setOrderPlaced(true);
       setCart([]);

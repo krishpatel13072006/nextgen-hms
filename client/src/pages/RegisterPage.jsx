@@ -41,7 +41,7 @@ export default function RegisterPage({ onRegister }) {
     }
     
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await axios.post('https://nextgen-hms-backend.onrender.com/api/auth/register', {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
@@ -51,7 +51,7 @@ export default function RegisterPage({ onRegister }) {
       setSuccess(true);
       
       // Auto-login after registration
-      const loginResponse = await axios.post('http://localhost:5000/api/auth/login', {
+      const loginResponse = await axios.post('https://nextgen-hms-backend.onrender.com/api/auth/login', {
         email: formData.email,
         password: formData.password
       });
