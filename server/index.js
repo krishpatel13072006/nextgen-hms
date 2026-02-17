@@ -104,8 +104,9 @@ const startServer = async () => {
   // Connect to Database first
   await connectDB();
   
-  // Then start the server
-  app.listen(PORT, () => {
+  // Then start the server - bind to 0.0.0.0 for cloud deployment
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, "0.0.0.0", () => {
     console.log(`🚀 Server spinning on port ${PORT}`);
     console.log(`🌐 API available at http://localhost:${PORT}`);
     console.log('\n📋 Available Endpoints:');
