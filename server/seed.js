@@ -11,19 +11,19 @@ const users = [
   {
     name: 'Admin User',
     email: 'admin@nextgenhms.com',
-    password: 'admin1357',
+    password: 'admin123123',
     role: 'admin'
   },
   {
     name: 'Krish',
     email: 'krish@example.com',
-    password: 'user1357',
+    password: 'user123123',
     role: 'guest'
   },
   {
     name: 'Darshil',
     email: 'darshil@example.com',
-    password: 'user1357',
+    password: 'user123123',
     role: 'guest'
   }
 ];
