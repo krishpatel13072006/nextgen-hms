@@ -30,22 +30,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 const corsOptions = {
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    const allowedOrigins = [
-      'http://localhost:5173', 
-      'http://localhost:5174',
-      'http://localhost:3000',
-      process.env.CLIENT_URL,
-    ].filter(Boolean);
-    
-    // In production, allow if origin is in list or if no origin (server-to-server)
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(null, true); // Allow all origins in production for flexibility
-    }
-  },
+  origin: [
+    "http://localhost:5173", // Local development
+    "http://localhost:5174", // Local development alt
+    "https://nextgen-hms.vercel.app" // Production frontend
+  ],
   credentials: true
 };
 app.use(cors(corsOptions));
