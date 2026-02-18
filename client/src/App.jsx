@@ -248,9 +248,9 @@ function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 sm:pt-24 pb-8 sm:pb-12 px-3 sm:px-6 lg:px-8">
+      <section className="pt-20 sm:pt-24 pb-8 sm:pb-12 px-3 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
             {/* Left Content */}
             <div className="space-y-3 sm:space-y-4 text-center lg:text-left order-2 lg:order-1">
               <div className="inline-block px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full">
@@ -297,17 +297,17 @@ function LandingPage() {
             </div>
 
             {/* Right Content - Spline Animation */}
-            <div className="relative">
+            <div className="relative w-full">
               <div className="absolute inset-0 bg-blue-500/10 rounded-2xl blur-3xl"></div>
-              <div className="relative bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-2xl h-[350px] sm:h-[400px] md:h-[450px] w-full overflow-hidden flex items-center justify-center">
+              <div className="relative bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-2xl h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-full overflow-hidden">
                 <iframe 
                   src="https://my.spline.design/circularparticleanimation-aujyrW7HyuULg05xMUEfmkgB?hideUI=1" 
                   frameBorder="0" 
-                  width="120%" 
-                  height="120%"
+                  width="100%" 
+                  height="100%"
                   title="Spline Animation"
                   loading="lazy"
-                  style={{ transform: 'scale(1.5)', transformOrigin: 'center center' }}
+                  className="w-full h-full"
                 />
               </div>
             </div>
@@ -362,10 +362,10 @@ function LandingPage() {
       {/* About Section */}
       <section id="about" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="space-y-6">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">Why Choose NextGen HMS?</h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <p className="text-gray-600 dark:text-gray-400">
                 Our platform combines cutting-edge technology with intuitive design to deliver 
                 a seamless hotel management experience.
               </p>
@@ -376,7 +376,7 @@ function LandingPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-gray-700 dark:text-gray-300">Cloud-based solution with 99.9% uptime guarantee</span>
+                  <span className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">Cloud-based solution with 99.9% uptime guarantee</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-blue-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -384,7 +384,7 @@ function LandingPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-gray-700 dark:text-gray-300">HIPAA compliant with end-to-end encryption</span>
+                  <span className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">HIPAA compliant with end-to-end encryption</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-blue-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -392,27 +392,27 @@ function LandingPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-gray-700 dark:text-gray-300">24/7 customer support and training</span>
+                  <span className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">24/7 customer support and training</span>
                 </li>
               </ul>
             </div>
-            <div className="bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl p-8">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-gray-100/50 dark:bg-slate-700/50 rounded-lg">
-                  <div className="text-3xl font-bold text-blue-500 dark:text-blue-400">98%</div>
-                  <div className="text-gray-600 dark:text-gray-400 text-sm mt-1">Customer Satisfaction</div>
+            <div className="bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl p-4 sm:p-6 lg:p-8">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+                <div className="text-center p-3 sm:p-4 bg-gray-100/50 dark:bg-slate-700/50 rounded-lg">
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-500 dark:text-blue-400">98%</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mt-1">Customer Satisfaction</div>
                 </div>
-                <div className="text-center p-4 bg-gray-100/50 dark:bg-slate-700/50 rounded-lg">
-                  <div className="text-3xl font-bold text-emerald-500 dark:text-emerald-400">50%</div>
-                  <div className="text-gray-600 dark:text-gray-400 text-sm mt-1">Time Saved</div>
+                <div className="text-center p-3 sm:p-4 bg-gray-100/50 dark:bg-slate-700/50 rounded-lg">
+                  <div className="text-2xl sm:text-3xl font-bold text-emerald-500 dark:text-emerald-400">50%</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mt-1">Time Saved</div>
                 </div>
-                <div className="text-center p-4 bg-gray-100/50 dark:bg-slate-700/50 rounded-lg">
-                  <div className="text-3xl font-bold text-purple-500 dark:text-purple-400">40%</div>
-                  <div className="text-gray-600 dark:text-gray-400 text-sm mt-1">Cost Reduction</div>
+                <div className="text-center p-3 sm:p-4 bg-gray-100/50 dark:bg-slate-700/50 rounded-lg">
+                  <div className="text-2xl sm:text-3xl font-bold text-purple-500 dark:text-purple-400">40%</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mt-1">Cost Reduction</div>
                 </div>
-                <div className="text-center p-4 bg-gray-100/50 dark:bg-slate-700/50 rounded-lg">
-                  <div className="text-3xl font-bold text-orange-500 dark:text-orange-400">24/7</div>
-                  <div className="text-gray-600 dark:text-gray-400 text-sm mt-1">Support Available</div>
+                <div className="text-center p-3 sm:p-4 bg-gray-100/50 dark:bg-slate-700/50 rounded-lg">
+                  <div className="text-2xl sm:text-3xl font-bold text-orange-500 dark:text-orange-400">24/7</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mt-1">Support Available</div>
                 </div>
               </div>
             </div>
