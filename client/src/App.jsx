@@ -9,7 +9,8 @@ import AdminAnalytics from './pages/AdminAnalytics';
 import RoomsPage from './pages/RoomsPage';
 import RoomDetailPage from './pages/RoomDetailPage';
 import AdminRequests from './pages/AdminRequests';
-import { CurrencyProvider, CurrencySelector } from './context/CurrencyContext';
+import { CurrencyProvider } from './context/CurrencyContext';
+import Spline from '@splinetool/react-spline';
 import ThemeToggle from './components/ThemeToggle';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, X, Sparkles, Users, BedDouble, Calendar, BarChart3, Image, Mail, Shield, Clock, MessageCircle, Menu } from 'lucide-react';
@@ -172,7 +173,6 @@ function LandingPage() {
               <a href="#contact" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm">Contact</a>
             </div>
             <div className="flex items-center gap-3">
-              <CurrencySelector />
               <ThemeToggle />
                {user ? (
                 <>
@@ -228,7 +228,6 @@ function LandingPage() {
               <a href="#about" className="block text-gray-600 dark:text-gray-400 hover:text-blue-500 py-2">About</a>
               <a href="#contact" className="block text-gray-600 dark:text-gray-400 hover:text-blue-500 py-2">Contact</a>
               <div className="pt-2 border-t border-gray-200 dark:border-slate-700">
-                <CurrencySelector />
                 <ThemeToggle />
               </div>
               {user ? (
@@ -298,21 +297,11 @@ function LandingPage() {
               </div>
             </div>
 
-            {/* Right Content - Hero Image/3D */}
+            {/* Right Content - Spline Animation */}
             <div className="relative hidden lg:block">
               <div className="absolute inset-0 bg-blue-500/10 rounded-2xl blur-3xl"></div>
-              <div className="relative bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-2xl p-8">
-                <div className="aspect-square flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-24 h-24 mx-auto bg-blue-500/20 rounded-full flex items-center justify-center">
-                      <svg className="w-12 h-12 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Smart Dashboard</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">Real-time insights and analytics</p>
-                  </div>
-                </div>
+              <div className="relative bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-2xl p-2 h-[500px]">
+                <Spline scene="https://my.spline.design/circularparticleanimation-aujyrW7HyuULg05xMUEfmkgB/" />
               </div>
             </div>
           </div>
