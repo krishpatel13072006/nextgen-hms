@@ -299,13 +299,14 @@ function LandingPage() {
             {/* Right Content - Spline Animation */}
             <div className="relative hidden lg:block">
               <div className="absolute inset-0 bg-blue-500/10 rounded-2xl blur-3xl"></div>
-              <div className="relative bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-2xl h-[500px] overflow-hidden">
+              <div className="relative bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-2xl h-[600px] w-full overflow-hidden">
                 <iframe 
                   src="https://my.spline.design/circularparticleanimation-aujyrW7HyuULg05xMUEfmkgB?hideUI=1" 
                   frameBorder="0" 
                   width="100%" 
                   height="100%"
                   title="Spline Animation"
+                  style={{ transform: 'scale(1.2)', transformOrigin: 'center center' }}
                 />
               </div>
             </div>
