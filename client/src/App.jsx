@@ -10,7 +10,6 @@ import RoomsPage from './pages/RoomsPage';
 import RoomDetailPage from './pages/RoomDetailPage';
 import AdminRequests from './pages/AdminRequests';
 import { CurrencyProvider } from './context/CurrencyContext';
-import Spline from '@splinetool/react-spline';
 import ThemeToggle from './components/ThemeToggle';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, X, Sparkles, Users, BedDouble, Calendar, BarChart3, Image, Mail, Shield, Clock, MessageCircle, Menu } from 'lucide-react';
@@ -300,8 +299,14 @@ function LandingPage() {
             {/* Right Content - Spline Animation */}
             <div className="relative hidden lg:block">
               <div className="absolute inset-0 bg-blue-500/10 rounded-2xl blur-3xl"></div>
-              <div className="relative bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-2xl p-2 h-[500px]">
-                <Spline scene="https://my.spline.design/circularparticleanimation-aujyrW7HyuULg05xMUEfmkgB/" />
+              <div className="relative bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-2xl h-[500px] overflow-hidden">
+                <iframe 
+                  src="https://my.spline.design/circularparticleanimation-aujyrW7HyuULg05xMUEfmkgB?hideUI=1" 
+                  frameBorder="0" 
+                  width="100%" 
+                  height="100%"
+                  title="Spline Animation"
+                />
               </div>
             </div>
           </div>
